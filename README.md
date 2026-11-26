@@ -11,7 +11,3 @@
 ## 架構重點
 
 以共用擷取介面隔離來源差異；新增來源時沿用統一輸出格式。現有資料未確認語言與框架，因此不列未核實的技術名稱。
-
-## English
-
-Static and dynamic product sources use separate scrapers and a shared output schema.
