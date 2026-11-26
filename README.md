@@ -14,4 +14,4 @@
 
 以固定 HTML 樣本測試來源解析結果，並記錄回應狀態與欄位缺漏，方便追查頁面結構變更。
 
-English: A scraper design for static and dynamic product pages with a shared output schema.
+**English:** A scraper design for static and dynamic product pages with a shared output schema.
