@@ -1,17 +1,20 @@
 # 酒類商品資料擷取
 
 ## 處理的問題
-不同網站提供靜態或動態商品頁面；抓取流程將來源差異交由不同實作處理，再整理成共用商品欄位。
 
+不同網站提供靜態或動態商品頁面；抓取流程以不同實作處理來源，再將商品資料整理成共用欄位格式。原始資料未確認語言與框架，因此不列技術版本。
 
-以抽象抓取方式處理靜態與動態網站的酒類商品資訊，並將擷取結果轉成統一資料規格。
+## 架構
 
-![靜態與動態來源的抽象擷取架構](docs/assets/workflow.svg)
+- **抽象抓取介面**：定義來源抓取器的共同呼叫方式。
+- **來源抓取器**：分別處理靜態與動態網站。
+- **資料正規化**：將來源欄位轉為共用商品資料格式。
 
-## 擷取架構
+![靜態與動態來源擷取流程](docs/assets/workflow.svg)
 
-- 抽象抓取介面定義來源抓取器的共同呼叫方式。
-- 靜態與動態網站由不同抓取實作處理。
-- 各來源資料轉成共用欄位格式後交給後續流程。
+## 後續優化方向（設計建議）
 
-English: A web-scraping system that handles static and dynamic sites through an abstract interface and normalizes output to a shared schema.
+- 為各來源抓取器建立介面測試與固定 HTML 樣本，驗證欄位解析及統一輸出。
+- 記錄來源回應狀態與欄位缺漏，方便定位頁面結構變更影響。
+
+English: A scraper design for static and dynamic product pages with a shared output schema.
