@@ -1,14 +1,17 @@
 # 酒類商品資料擷取
 
-不同來源有靜態與動態商品頁面，程式使用對應擷取器並整理成共用商品欄位。
+不同來源使用各自的靜態或動態頁面擷取方式，再整理成共用商品欄位，降低來源差異對後續資料處理的影響。
 
-```mermaid
-flowchart LR
-    Source[商品頁來源] --> Type{頁面類型}
-    Type --> Static[靜態擷取器]
-    Type --> Dynamic[動態擷取器]
-    Static --> Schema[共用商品資料格式]
-    Dynamic --> Schema
-```
+## 擷取流程
 
-English: Static and dynamic product sources use separate scrapers and a shared output schema.
+1. 判斷商品頁面的來源與載入方式。
+2. 使用對應的靜態或動態擷取器取得資料。
+3. 轉換為共用商品資料格式。
+
+## 架構重點
+
+以共用擷取介面隔離來源差異；新增來源時沿用統一輸出格式。現有資料未確認語言與框架，因此不列未核實的技術名稱。
+
+## English
+
+Static and dynamic product sources use separate scrapers and a shared output schema.
